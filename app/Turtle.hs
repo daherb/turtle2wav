@@ -1,4 +1,14 @@
-module Turtle where
+module Turtle (Operation(..), home) where
 
-data PenPosition = Up | Down deriving Show
-data Operation = Forward Int | Backward Int | Left Int | Right Int | Pen PenPosition | Heading | Position deriving Show
+data Operation = Forward | Backward | Left | Right | Pen | Heading | Position | Push Int | Pop | Dup | Swap | Add | Sub | Label Int | Jumpz Int deriving Show
+
+home :: [Operation]
+home =
+  [
+    Heading
+  , Dup
+  , Dup
+  , Sub
+  , Sub
+  , Turtle.Left
+  ]
